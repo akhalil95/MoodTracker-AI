@@ -13,14 +13,24 @@ import {
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import MoodChip from "./MoodChip";
 import type { Entry } from "../api/types";
+import { api } from "../api/client";
 
 export default function EntryTable() {
   const [rows, setRows] = useState<Entry[]>([]);
 
+  async function load() {
+    const res = await api.get<Entry[]>("/entries");
+    setRows(res.data);
+  }
+
   useEffect(() => {
-    // load from API later; keeping empty for now
-    setRows([]);
+    load();
   }, []);
+
+  async function remove(id: number) {
+    await api.delete(`/entries/${id}`);
+    await load();
+  }
 
   return (
     <TableContainer
@@ -72,7 +82,11 @@ export default function EntryTable() {
               <TableCell>{r.screen_time}</TableCell>
               <TableCell align="right">
                 <Tooltip title="Delete">
-                  <IconButton size="small" color="error">
+                  <IconButton
+                    size="small"
+                    color="error"
+                    onClick={() => remove(r.id)}
+                  >
                     <DeleteOutlineIcon fontSize="small" />
                   </IconButton>
                 </Tooltip>

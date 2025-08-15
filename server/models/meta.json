@@ -1,0 +1,23 @@
+{
+  "updated_at": "2025-08-15T23:28:53.167207Z",
+  "k": 6,
+  "features": [
+    "sleep_hours",
+    "steps",
+    "workouts",
+    "caffeine",
+    "meals",
+    "work_hours",
+    "screen_time",
+    "weekday"
+  ],
+  "corr": {
+    "sleep_hours": 0.22203964416848104,
+    "steps": 0.5976214470657139,
+    "workouts": 0.01155886627716441,
+    "caffeine": -0.16890948868752878,
+    "meals": -0.039820066901094756,
+    "work_hours": -0.12791180923545034,
+    "screen_time": -0.17663543940856824
+  }
+}

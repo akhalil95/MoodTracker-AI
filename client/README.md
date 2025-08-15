@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+# MoodTracker AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-blue)
+![Material UI](https://img.shields.io/badge/UI-Material%20UI-blueviolet)
+![FastAPI](https://img.shields.io/badge/Backend-FastAPI-green)
+![Python](https://img.shields.io/badge/Language-Python-yellow)
+![Machine Learning](https://img.shields.io/badge/ML-KMeans-orange)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
-Currently, two official plugins are available:
+A full-stack web application that helps users track daily habits and discover how they impact mood, powered by AI insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Daily Habit Logging** – Track sleep, steps, workouts, caffeine, meals, work hours, screen time, and mood.
+- **Beautiful UI** – Built with Material UI for a clean, modern, and responsive design.
+- **AI Analysis** – Uses k-means clustering to find correlations between habits and mood.
+- **REST API** – FastAPI backend for handling entries, analytics, and ML retraining.
+- **Data Persistence** – SQLite database for storing user entries.
+- **Cross-Origin Ready** – Configured with CORS for smooth frontend-backend integration.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Frontend**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React (TypeScript)
+- Material UI
+- Axios
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Backend**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Python
+- FastAPI
+- scikit-learn
+- SQLite
+- Pydantic
+
+---
+
+## 📸 Screenshots
+
+---
+
+## ⚡ Getting Started
+
+### Prerequisites
+
+- Node.js >= 18
+- Python >= 3.9
+- pip
+- virtualenv
+
+---
+
+### 1️⃣ Clone the repo
+
+- install all dependencies
+- client: npm run dev
+- server: .venv\Scripts\Activate
+  uvicorn app.main:app --reload

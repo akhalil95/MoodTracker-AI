@@ -10,6 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import MoodChip from "./MoodChip";
+import { api } from "../api/client";
 
 type FormState = {
   date: string;
@@ -50,10 +51,20 @@ export default function EntryForm({ onSaved }: { onSaved?: () => void }) {
   const submit = async () => {
     try {
       if (form.mood < 1 || form.mood > 10) throw new Error("Mood must be 1–10");
-      setMsg({ type: "success", text: "Looks good! (API wiring comes next)" });
+
+      await api.post("/entries", {
+        ...form,
+        tags: form.tags
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+      });
+
+      setMsg({ type: "success", text: "Saved!" });
       onSaved?.();
     } catch (e: any) {
-      setMsg({ type: "error", text: e?.message || "Validation failed" });
+      const detail = e?.response?.data?.detail;
+      setMsg({ type: "error", text: detail || e?.message || "Save failed" });
     }
   };
 

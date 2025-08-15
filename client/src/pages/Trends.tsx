@@ -11,13 +11,16 @@ import {
 } from "recharts";
 import type { Entry } from "../api/types";
 import { moodColor } from "../components/MoodChip";
+import { api } from "../api/client";
 
 export default function Trends() {
   const [rows, setRows] = useState<Entry[]>([]);
 
   useEffect(() => {
-    // will fetch from API later
-    setRows([]);
+    (async () => {
+      const res = await api.get<Entry[]>("/entries");
+      setRows(res.data);
+    })();
   }, []);
 
   const data = useMemo(() => rows, [rows]);
