@@ -14,7 +14,7 @@ A full-stack web application that helps users track daily habits and discover ho
 ## 🚀 Features
 
 - **Daily Habit Logging** – Track sleep, steps, workouts, caffeine, meals, work hours, screen time, and mood.
-- **UI** – Built with Material UI for a clean, modern, and responsive design.
+- **Material UI** – Built with Material UI for a clean, modern, and responsive design.
 - **AI Analysis** – Uses k-means clustering to find correlations between habits and mood.
 - **REST API** – FastAPI backend for handling entries, analytics, and ML retraining.
 - **Data Persistence** – SQLite database for storing user entries.
